@@ -27,14 +27,14 @@ if(isset($_POST['email_data']))
 		$mail = new PHPMailer;
 		$mail->IsSMTP();	
 							//Sets Mailer to send message using SMTP
-		$mail->Host = 'mail.hostimon.in';		//Sets the SMTP hosts of your Email hosting, this for Godaddy
+		$mail->Host = 'smtp.gmail.com';		//Sets the SMTP hosts of your Email hosting, this for Godaddy
 		$mail->Port = '465';								//Sets the default SMTP server port
 		$mail->SMTPAuth = true;							//Sets SMTP authentication. Utilizes the Username and Password variables
-		$mail->Username = 'admin@hostimon.in';					//Sets SMTP username
-		$mail->Password = 'Ankit5872#';					//Sets SMTP password
+		$mail->Username = 'email';					//Sets SMTP username
+		$mail->Password = 'Password';					//Sets SMTP password
 		$mail->SMTPSecure = 'ssl';							//Sets connection prefix. Options are "", "ssl" or "tls"
-		$mail->From = 'admin@hostimon.in';			//Sets the From email address for the message
-		$mail->FromName = 'Hostimon Admin';					//Sets the From name of the message
+		$mail->From = 'email';			//Sets the From email address for the message
+		$mail->FromName = 'Test';					//Sets the From name of the message
 		$mail->AddAddress($row["email"], $row["name"]);	//Adds a "To" address
 		$mail->WordWrap = 50;							//Sets word wrapping on the body of the message to a given number of characters
 		$mail->IsHTML(true);							//Sets message type to HTML
